@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   include SessionsHelper
 
-  def new
-    @user = User.new
-  end
-
-
   def show
     @user = User.find_by(id: params[:id])
     @skill = Skill.new
@@ -13,6 +8,10 @@ class UsersController < ApplicationController
     if @user != current_user
       redirect_to '/login'
     end
+  end
+
+  def new
+    @user = User.new
   end
 
   def create
@@ -25,6 +24,10 @@ class UsersController < ApplicationController
       @errors = @user.errors.full_messages
       render "new"
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   private
