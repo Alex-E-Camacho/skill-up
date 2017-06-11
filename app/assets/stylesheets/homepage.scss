@@ -2,28 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#firstdiv {
+.firstdiv {
   background-color: #80edd9;
   height:600px;
   color: white;
    }
 
-#div-one-first {
- margin: auto;
- width: 80%;
-}
+
 
 .stepheader {
  padding: 10px;
 }
 
-#div-one-secondg {
- margin: auto;
- width: 80%;
-}
 
 #seconddiv {
- background-image: url('http://www.zarofil.com/i/2017/05/black-and-white-nature-hd-wallpaper-desktop-background.jpg');
+ background-image: url('https://code2prog.com/wp-content/uploads/2015/01/ceystalhorizon-flat-design-wallpapers-HD-free-wallpapers-backgrounds-images-FHD-4k-download-2014-2015-2016.jpg');
  min-height: 100%;
  background-position: center;
  background-size: cover;
@@ -66,4 +59,56 @@ padding: 1%
   height: 400px;
   background-color: #80edd9;
   color: grey;
+}
+
+header {
+  text-align: center;
+  background: #80edd9;
+  color: white;
+}
+header .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+header img {
+  display: block;
+  margin: 0 auto 20px;
+}
+header .intro-text .name {
+  display: block;
+  font-family: 'Pacifico', cursive;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
+}
+header .intro-text .skills {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+@media (min-width: 768px) {
+  header .container {
+    padding-top: 200px;
+    padding-bottom: 100px;
+  }
+  header .intro-text .name {
+    font-size: 4.75em;
+  }
+  header .intro-text .skills {
+    font-size: 1.75em;
+  }
+}
+
+hr.star-light {
+  border-color: white;
+}
+hr.star-light:after {
+  background-color: #18BC9C;
+  color: white;
+}
+hr.star-primary {
+  border-color: #2C3E50;
+}
+hr.star-primary:after {
+  background-color: white;
+  color: #2C3E50;
 }

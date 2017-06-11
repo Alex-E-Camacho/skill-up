@@ -13,7 +13,7 @@
           <% end %>
         </ul>
     </div>
-    
+
     <h2>Skills I want to Learn</h2>
       <ul>
         <% @user.skills.each do |skill| %>
@@ -26,7 +26,7 @@
 
   <% if current_user.id === @user.id %>
     <h2>Add Skill</h2>
-    <%= form_for @skill, url: {action: "create"} do |f| %>
+    <%= form_for @skill do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title %>
       <%= f.select (:teach) do %>
@@ -43,8 +43,6 @@
       <%= f.label :description %>
       <%= f.text_area :description %>
       </div>
-      <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.submit "Add Skill" %>
     <% end %>
   <% end %>
-</div>
