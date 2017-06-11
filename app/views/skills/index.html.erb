@@ -1,5 +1,34 @@
 <br><br><br><br>
+
 <% @skills.each do |skill| %>
-  <%= skill.title %>
-  <%= skill.description %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+
+
+  <div>
+  <% if skill.teach %>
+    <h2>People who can teach</h2>
+    <%= link_to skill.user.first_name, user_path(skill.user.id) %>
+    <p>
+    <%= skill.title %>
+    </p>
+    <p>
+    <%= skill.description %>
+  </p>
+  <% else %>
+    <h2>People who can want to learn</h2>
+    <%= link_to skill.user.first_name, user_path(skill.user.id) %>
+    <p>
+    <%= skill.title %>
+    </p>
+    <p>
+      <%= skill.description %>
+    </p>
+  <% end %>
+  </div>
+       </div>
+    </div>
+</div>
 <% end %>

@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: 23b0517e20e7ddf2e733c1bcdb22b0b12166f042
+  specs:
+    bcrypt (3.1.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,7 +45,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
-    bcrypt (3.1.11)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
@@ -55,7 +60,7 @@ GEM
     execjs (2.7.0)
     faker (1.7.3)
       i18n (~> 0.5)
-    ffi (1.9.18)
+    ffi (1.9.18-x86-mingw32)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.4)
@@ -77,8 +82,9 @@ GEM
     minitest (5.10.2)
     multi_json (1.12.1)
     nio4r (2.1.0)
-    nokogiri (1.8.0)
-    pg (0.20.0)
+    nokogiri (1.8.0-x86-mingw32)
+      mini_portile2 (~> 2.2.0)
+    pg (0.20.0-x86-mingw32)
     puma (3.9.1)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -135,6 +141,8 @@ GEM
     tilt (2.0.7)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2017.2)
+      tzinfo (>= 1.0.0)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (3.5.1)
@@ -147,10 +155,10 @@ GEM
     websocket-extensions (0.1.2)
 
 PLATFORMS
-  ruby
+  x86-mingw32
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt!
   byebug
   coffee-rails (~> 4.2)
   faker
@@ -167,4 +175,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.0

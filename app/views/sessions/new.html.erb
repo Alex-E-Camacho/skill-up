@@ -1,4 +1,4 @@
-<% if @errors %>
+<br><br><br><br><br><% if @errors %>
 <div class="alert alert-danger" role="alert">
   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
     <div id="error_explanation">
@@ -9,7 +9,7 @@
 
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-3 col-md-offset-4">
     <h1>Log in</h1><br>
     <%= form_for(:session, url: login_path) do |f| %>
 
