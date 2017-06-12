@@ -1,10 +1,4 @@
 GIT
-  remote: https://github.com/codahale/bcrypt-ruby.git
-  revision: 23b0517e20e7ddf2e733c1bcdb22b0b12166f042
-  specs:
-    bcrypt (3.1.11)
-
-GIT
   remote: https://github.com/doabit/semantic-ui-sass.git
   revision: 48f03deab9131ad1583eda53c16b3eb83e11c178
   specs:
@@ -52,6 +46,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
+    bcrypt (3.1.11)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
@@ -175,7 +170,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bcrypt!
+  bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.2)
   faker

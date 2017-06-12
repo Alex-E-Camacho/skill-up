@@ -1,4 +1,8 @@
 user = User.create(first_name: "joe", last_name: "joe", username: "joe", email: "joe@gmail.com", password: "password")
-skill = Skill.create(title: "test", category: "testing")
 # post = skill.
 # user.apprenticeships.create(requestor_id: 1, post_id: 1)
+sports_skills = [["Basketball", "Sports", "https://static.pexels.com/photos/305243/pexels-photo-305243.jpeg"], ["Football", "Sports", "https://images.pexels.com/photos/4198/field-sport-ball-america.jpg?w=940&h=650&auto=compress&cs=tinysrgb"], ["Soccer", "Sports", "https://static.pexels.com/photos/274422/pexels-photo-274422.jpeg"], ["Baseball", "Sports", "https://images.pexels.com/photos/99596/pexels-photo-99596.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"], ["Volleyball", "Sports", "https://images.pexels.com/photos/40815/youth-active-jump-happy-40815.jpeg?h=350&auto=compress&cs=tinysrgb"], ["Martial Arts", "Sports", "https://images.pexels.com/photos/165939/pexels-photo-165939.jpeg?h=350&auto=compress&cs=tinysrgb"], ["Running", "Sports", "https://images.pexels.com/photos/40751/running-runner-long-distance-fitness-40751.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"], ["Biking", "Sports", "https://images.pexels.com/photos/17729/pexels-photo.jpg?w=940&h=650&auto=compress&cs=tinysrgb"], ["Climbing", "Sports", "https://images.pexels.com/photos/30657/pexels-photo-30657.jpg?w=940&h=650&auto=compress&cs=tinysrgb"]]
+
+sports_skills.each do |name, category, link|
+  Skill.create(title: name, category: category, img_url: link)
+end
