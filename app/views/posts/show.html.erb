@@ -1,59 +1,54 @@
 <br><br><br><br><br><br>
-<div>
-  <p><%= @post.description %></p>
-  <p> Poster: <%= @post.creator.full_name %> </p>
-</div>
 
-<div>
-  <%= link_to 'User Profile',  user_path(@post.creator) %>
-</div>
+<div class="container post-main panel panel-default">
+  <div class="panel-heading"><strong>Post:  <%= @post.id %> </strong></div>
+
+  <div class="description-box well">
+    <p><strong>Post Description:</strong>  <%= @post.description %></p>
+    <p><strong>Poster:</strong> <%= @post.creator.full_name.capitalize %> </p>
+      <%= link_to image_tag(@post.skill.img_url, :class => "img-fluid", size: "320x256"), post_path(@post.id) %>
+      <br>
+      <div link-to-user>
+        <%= link_to 'User Profile',  user_path(@post.creator), :class => "btn btn-danger" %>
+      </div>
+  </div>
 
 
-<div>
-  <% if @post.apprenticeships.exists?(:requestor_id => current_user.id) %>
-  <p> Hello, User you have placed an offer to this post </p>
-  <% else %>
-  <p>
   <% if logged_in? %>
-      <% if @post.creator != current_user %>
-        <%= form_for :apprenticeship, url: '/apprenticeships' do |f| %>
-          <%= f.label "Offer: "%>
-          <%= f.text_field :offer %>
-          <%= f.hidden_field :requestor_id, :value => current_user.id %>
-          <%= f.hidden_field :post_id, :value => @post.id %>
-          <%= f.submit "Send a request to #{@post.creator.username}!" %>
-        <% end %>
+  <div class="">
+    <% if @post.apprenticeships.exists?(:requestor_id => current_user.id) %>
+      <p> Hello, User you have placed an offer to this post </p>
+    <% else %>
+    <p>
+      <% if logged_in? %>
+          <% if @post.creator != current_user %>
+            <%= form_for :apprenticeship, url: '/apprenticeships' do |f| %>
+              <%= f.label "Make an offer: "%>
+              <%= f.text_field :offer, :class => "form-control" %>
+              <%= f.hidden_field :requestor_id, :value => current_user.id %>
+              <%= f.hidden_field :post_id, :value => @post.id %>
+              <%= f.submit "Send a request to #{@post.creator.username}!" , :class => "btn btn-default btn-lg"%>
+            <% end %>
+          <% end %>
       <% end %>
-  <% end %>
-  </p>
-  <% end %>
-</div>
-
-<div class='container-fluid'>
-  <div class='row'>
-
-    <div class="card-block col-md-4 col-xs-12">
-            <%= link_to image_tag(@post.skill.img_url, :class => "img-fluid", size: "320x256"), post_path(@post.id) %>
-        <div class="card-block">
-            <h4 class="card-title"><%= @post.skill.title %></h4>
-            <p class="card-text"><%= @post.description %></p>
-            <p class="card-text"><%= @post.creator.username %></p>
-          </div>
-      </div>
-      </div>
-    </div>
-</div>
-
-
-<div><br>
-  <% if @post.apprenticeships.any? %>
-  <% if @post.creator == current_user %>
-  <h4> Current offer: </h4>
-  <ul>
-    <% @post.apprenticeships.each do |app| %>
-    <li><p><%= app.offer %> - <strong><%= app.requestor.full_name %></strong></p><%= link_to 'Accept', apprenticeship_messages_path(app) , :class => "btn btn-primary"%> </li>
+    </p>
     <% end %>
-    <ul>
-    <% end %>
+  </div>
   <% end %>
+
+  <div><br>
+    <% if @post.apprenticeships.any? %>
+      <% if @post.creator == current_user %>
+      <div class="panel panel-primary offer-panel">
+        <div class="panel-heading">  <h4> Current offer: </h4> </div>
+          <ul>
+            <% @post.apprenticeships.each do |app| %>
+              <li class="app-list"><%= app.offer %> - <strong><%= app.requestor.full_name %></strong>     <span><%= link_to 'Accept', apprenticeship_messages_path(app) , :class => "btn btn-primary "%></span> </li>
+            <% end %>
+          <ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 </div>

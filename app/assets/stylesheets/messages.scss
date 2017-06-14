@@ -2,3 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "semantic-ui";
+
+.messages-container {
+  width: 50%;
+}
+
+.black-bg {
+  background-color: black;
+}
+
+#message-header {
+  padding-left: 5%;
+}
