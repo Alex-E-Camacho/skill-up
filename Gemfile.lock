@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: 23b0517e20e7ddf2e733c1bcdb22b0b12166f042
+  specs:
+    bcrypt (3.1.11)
+
+GIT
   remote: https://github.com/doabit/semantic-ui-sass.git
   revision: 48f03deab9131ad1583eda53c16b3eb83e11c178
   specs:
@@ -46,8 +52,17 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
+<<<<<<< HEAD
     bcrypt (3.1.11)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
     bcrypt (3.1.11-x86-mingw32)
+>>>>>>> 1e81eed3cb39f6100c78ac7dc1d9a582ff35a899
+=======
+>>>>>>> 602d4d756799035d8c5c24252beab0296a6e6aaa
+>>>>>>> master
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
@@ -63,8 +78,11 @@ GEM
     execjs (2.7.0)
     faker (1.7.3)
       i18n (~> 0.5)
+<<<<<<< HEAD
     ffi (1.9.18)
+=======
     ffi (1.9.18-x86-mingw32)
+>>>>>>> master
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     httparty (0.15.5)
@@ -90,12 +108,15 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.6.0)
     nio4r (2.1.0)
+<<<<<<< HEAD
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    pg (0.21.0)
+=======
     nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
-    pg (0.21.0)
     pg (0.21.0-x86-mingw32)
+>>>>>>> master
     pg_search (2.0.1)
       activerecord (>= 4.2)
       activesupport (>= 4.2)
@@ -161,8 +182,6 @@ GEM
     tilt (2.0.7)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2017.2)
-      tzinfo (>= 1.0.0)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (3.5.1)
@@ -175,11 +194,14 @@ GEM
     websocket-extensions (0.1.2)
 
 PLATFORMS
+<<<<<<< HEAD
   ruby
+=======
   x86-mingw32
+>>>>>>> master
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt!
   byebug
   coffee-rails (~> 4.2)
   faker
@@ -200,4 +222,8 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.1
+<<<<<<< HEAD
+   1.14.5
+=======
+   1.15.0
+>>>>>>> master

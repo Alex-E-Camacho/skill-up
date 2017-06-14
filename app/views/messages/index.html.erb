@@ -1,8 +1,8 @@
 <br><br><br><br><br>
 
 
-<div class="container">
-  <strong><p> Apprenticeship for :  <%= @apprenticeship.post.skill.title %></p></strong>
+<div class="messages-container" id="message-header">
+  <h3><p> Apprenticeship for :  <%= @apprenticeship.post.skill.title %></p></h3>
   <p> Subject line: <%= @apprenticeship.post.description %> </p>
   <p> <strong>Offer:</strong>  <%= @apprenticeship.offer %> </p>
 </div>
@@ -12,9 +12,9 @@
    <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
 
-<br><br><br><br><br>
+<br>
 <div class="container chat-container">
-  <div class="ui segment chat-main">
+  <div class="ui segment chat-main messages-container">
     <% @messages.each do |message| %>
       <% if message.body %>
         <% @user = User.find(message.user_id) %>
@@ -23,14 +23,14 @@
     <% end %>
   </div>
 
-  <%= form_for [@apprenticeship, @message], html: {class: "ui reply form"} do |f| %>
+  <%= form_for [@apprenticeship, @message], html: {class: "ui reply form messages-container"} do |f| %>
     <div class="field">
-      <%= f.text_area :body, class: "form-control" %>
+      <%= f.text_area :body, class: "form-control", placeholder: "Add message here" %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
-    </div><br>
+    </div>
 
     <div>
-      <input class="btn btn-primary chat-submit" type="submit" value="Add reply">
+      <input class="btn btn-primary chat-submit black-bg" type="submit" value="Submit message">
     </div>
 
   <% end %>

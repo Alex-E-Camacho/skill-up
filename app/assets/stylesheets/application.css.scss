@@ -45,12 +45,6 @@
 }
 
 
-
-// #logo:hover {
-//   color: #fff;
-//   text-decoration: none;
-// }
-
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
@@ -81,13 +75,13 @@ th {
 
 .right-table {
     width:47%;
-    margin-right:2%;
+    margin-right: 2%;
     float: right;
 }
 
 .left-table {
     width:47%;
-    margin-right:2%;
+    margin-right: 2%;
     float: left;
 }
 
@@ -101,16 +95,27 @@ th {
 .index-first{
   width: 45%;
   margin-right:2%;
+  margin-left:2%;
   float: left;
+  background-color: 	#D3D3D3;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .index-second{
   width: 45%;
   margin-right:2%;
+  margin-left:2%;
   float: right;
   margin-bottom: 10%;
+  background-color: #D3D3D3;
+  box-shadow: 10px 10px 5px #888888;
 }
 
+.skill-index {
+  margin-top: 100px;
+  color: #5F9EA0;
+  background-color: yellow;
+}
 
 .skill-show {
   position: absolute;
@@ -120,7 +125,7 @@ th {
   transform: translate(-50%,-50%);
   }
 
-  .skill-new-post {
+.skill-new-post {
     position: fixed;
     bottom: 0;
     right: 0;
@@ -151,4 +156,50 @@ th {
 
 .row {
   display: flex;
+
+.post-main {
+  padding: 1% 5% 5% 8%;
+  background-color:  #dadfe8;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.description-box {
+  background-color: white;
+  padding-top: 15px;
+}
+
+.user-profile-page-link {
+  background-color: white;
+}
+
+.offer-box {
+  font-size : 25px;
+}
+
+.image-box {
+  background-color: black;
+  margin:0 auto;
+}
+
+.img-fluid {
+  margin: auto auto;
+  display: block;
+}
+
+.btn-danger {
+  margin: auto auto;
+  display: block;
+}
+
+.btn-lg {
+  margin: auto auto;
+  display: block;
+}
+
+.offer-panel {
+
+}
+
+.app-list {
+  padding: 1%;
 }

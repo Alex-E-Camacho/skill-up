@@ -4,8 +4,9 @@
   <div class='row'>
   <% if @posts.length > 0 %>
     <% @posts.each do |post| %>
-    <!-- <div class="card-group display-of-cards"> -->
       <div class="card col-md-3 col-xs-12 text-center card-border well well-sm">
+    <div class="card-group display-of-cards">
+      <div class="card col-md-3 col-xs-12 text-center card-border well">
         <div class="card-header">
           <h2 class="card-title skill-title card-img-overlay"><br><%= post.skill.category %></h4>
           <h3 class="card-title skill-title card-img-overlay"><br><%= post.skill.title %></h4>

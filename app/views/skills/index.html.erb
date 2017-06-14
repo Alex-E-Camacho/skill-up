@@ -1,41 +1,58 @@
-<br><br><br><br><br><br><br>
 
-<div class="index-first">
-  <h1>Technology</h1>
-  <% @tech.each do |t| %>
-    <%= link_to t.title, t %>
-    <br>
-  <% end %>
+<div class="skill-index center-text">
+  <div class="index-first text-center">
+    <table class="table">
+      <h1>Technology</h1>
+      <% @tech.each do |t| %>
+        <tr>
+          <%= link_to t.title, t %>
+        </tr>
+      <br>
+      <% end %>
 
-<h1>Cooking</h1>
-<% @cook.each do |t| %>
-  <%= link_to t.title, t %>
-  <br>
-<% end %>
+      <h1>Cooking</h1>
+      <% @cook.each do |t| %>
+        <tr>
+          <%= link_to t.title, t %>
+        </tr>
+      <br>
+      <% end %>
 
-<h1>Education</h1>
-<% @edu.each do |t| %>
-  <%= link_to t.title, t %>
-  <br>
-<% end %>
-</div>
+      <h1>Education</h1>
+      <% @edu.each do |t| %>
+        <tr>
+          <%= link_to t.title, t %>
+        </tr>
+      <br>
+      <% end %>
+    </table>
+  </div>
 
-<div class="index-second">
-<h1>Fitness</h1>
-<% @fit.each do |t| %>
-  <%= link_to t.title, t %>
-  <br>
-<% end %>
+  <div class="index-second text-center">
+    <table class="table">
+      <h1>Fitness</h1>
+      <% @fit.each do |t| %>
+      <tr>
+        <%= link_to t.title, t %>
+      </tr>
+        <br>
+      <% end %>
 
-<h1>Sports</h1>
-<% @sport.each do |t| %>
-  <%= link_to t.title, t %>
-  <br>
-<% end %>
+      <h1>Sports</h1>
+      <% @sport.each do |t| %>
+      <tr>
+        <%= link_to t.title, t %>
+      </tr>
+        <br>
+      <% end %>
 
-<h1>Music</h1>
-<% @music.each do |t| %>
-  <%= link_to t.title, t %>
-  <br>
-<% end %>
-</div>
+      <h1>Music</h1>
+      <% @music.each do |t| %>
+      <tr>
+        <%= link_to t.title, t %>
+      </tr>
+        <br>
+      <% end %>
+      </table>
+    </div>
+  </div>

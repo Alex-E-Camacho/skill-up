@@ -32,89 +32,97 @@
     </div>
 <div class="container">
   <div class="left-table">
-    <table class="table">
-      <thead class="thead-inverse">
-        <th scope="row">Skills I have</th>
-        <tr>
-          <th>Title</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @user.posts.each do |post| %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead class="thead-inverse">
+          <h2>Skills I have</h2>
           <tr>
-            <td><%= post.skill.title %></td>
-            <td><%= post.description %></td>
-            <td><%= link_to "Link", post_path(post) %></td>
-            <td><%= link_to 'Delete', post, :method => :delete, :confirm => "Are you sure?" %></td>
-            <td><%= link_to 'Edit', edit_post_path(post)%></td>
+            <th>Title</th>
+            <th>Description</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @user.posts.each do |post| %>
+            <tr>
+              <td><%= post.skill.title %></td>
+              <td><%= post.description %></td>
+              <td><%= link_to "Link", post_path(post) %></td>
+              <td><%= link_to 'Delete', post, :method => :delete, :confirm => "Are you sure?" %></td>
+              <td><%= link_to 'Edit', edit_post_path(post)%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
-  <table class="table">
-    <h2>Connections</h2>
+<div class="container">
+<h2>Connections</h2>
+  <table class="table table-striped">
+    <th>Offer</th>
+    <th>Requester</th>
+    <th>Skill Page</th>
+    <th>Messages</th>
     <% @user.posts.each do |post| %>
         <% post.apprenticeships.each do |a| %>
         <tr>
-          <td>Offer: <%= a.offer %></td>
-          <br>
-          <td>Requestor: <%= a.requestor.username %></td>
-          <td><%= link_to "Post Page", post_path(post) %></td>
-          <br>
-          <td>Status:
-           <% if a.accepted == false %>
-           <p>In Progess</p>
-            <% else %>
-            <p>Accepted</p>
-            <% end %>
-         </td>
-        </tr>
-        <% end %>
-    <% end %>
-  </table>
-
-
-  <table class="table">
-    <h2>Requests</h2>
-        <% @requests.each do |a| %>
-        <tr>
-          <td>Offer: <%= a.offer %></td>
-          <br>
+          <td><%= a.offer %></td>
+          <td><%= link_to a.requestor.username, user_path(a.requestor_id) %></td>
+          <td><%= link_to a.post.skill.title, post_path(post) %></td>
           <td>
-            Post Owner: <%= a.post.creator.username %></td>
-          <td><%= link_to "Post Page", post_path(a.post) %></td>
-          <br>
-          <td>Status:
            <% if a.accepted == false %>
-           <p>In Progess</p>
+           <p>Status: In Progess</p>
             <% else %>
-            <p>Accepted</p>
-            <%= link_to 'Apprenticeship', apprenticeship_messages_path(a) , class: "btn btn-primary" %>
+              <%= link_to 'Messages', apprenticeship_messages_path(a) , class: "btn btn-primary black-bg" %>
             <% end %>
          </td>
         </tr>
         <% end %>
-  </table>
-
-<div class="form-group">
-  <div class="add-skill">
-    <% if current_user.id === @user.id %>
-      <h2>Add Skill</h2>
-      <%= form_for Post.new do |f| %>
-          <%= f.label :skill %>
-           <%= f.collection_select(:skill_id, Skill.all, :id, :title) %>
-           <div class="form-group">
-            <label for="">Description</label>
-              <%= f.text_area :description, class: "form-control" %>
-          </div>
-          <br>
-        <%= f.submit "Add Skill", class: "btn btn-primary" %>
-      <% end %>
     <% end %>
-    <br><br>
+  </table>
+</div>
+
+<div class="container">
+  <h2>Requests</h2>
+  <div class="table-responsive">
+    <table class="table">
+    <th>Offer</th>
+    <th>Requester</th>
+    <th>Skill Page</th>
+    <th>Messages</th>
+          <% @requests.each do |a| %>
+        <tr>
+          <td><%= a.offer %></td>
+          <td><%= link_to a.requestor.username, user_path(a.requestor_id) %></td>
+          <td><%= link_to a.post.skill.title, post_path(a.post) %></td>
+          <td>
+           <% if a.accepted == false %>
+           <p>Status: In Progess</p>
+            <% else %>
+              <%= link_to 'Messages', apprenticeship_messages_path(a) , class: "btn btn-primary black-bg" %>
+              <% end %>
+           </td>
+          </tr>
+          <% end %>
+    </table>
+  </div>
+</div>
+<div class="container">
+  <div class="form-group">
+      <% if current_user.id === @user.id %>
+        <h2>Add Skill</h2>
+        <%= form_for Post.new do |f| %>
+            <%= f.label :skill %>
+             <%= f.collection_select(:skill_id, Skill.all, :id, :title) %>
+             <div class="form-group">
+              <label for="">Description</label>
+                <%= f.text_area :description, :rows => 5, style: 'width:50%;', class: "form-control"%>
+            </div>
+            <br>
+          <%= f.submit "Add Skill", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+      <br><br>
   </div>
 </div>
