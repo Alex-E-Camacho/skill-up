@@ -141,7 +141,7 @@ th {
 }
 
 .card {
-  width: 25rem;
+  flex: 1;
 }
 
 .img-post {
@@ -152,6 +152,9 @@ th {
 .display-of-cards {
   justify-content: space-between;
 }
+
+.row {
+  display: flex;
 
 .post-main {
   padding: 1% 5% 5% 8%;
@@ -198,4 +201,26 @@ th {
 
 .app-list {
   padding: 1%;
+}
+
+#outside-container {
+  display: block;
+  overflow: auto;
+  height: 500px;
+}
+
+.one-card {
+  background-color: black;
+  height: 250px;
+  display: block;
+  margin: auto auto;
+}
+
+.outside-well {
+  background-color: #808080;
+}
+
+.bottom-button {
+  position: relative;
+  bottom: 10%;
 }

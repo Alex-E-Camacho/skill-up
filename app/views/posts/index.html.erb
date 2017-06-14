@@ -1,9 +1,10 @@
 
 <br><br><br><br><br><br><br><br><br><br>
-<div class='container-fluid'>
+<div class='container-fluid outside-container well outside-well'>
   <div class='row'>
   <% if @posts.length > 0 %>
     <% @posts.each do |post| %>
+      <div class="card col-md-3 col-xs-12 text-center card-border well well-sm">
     <div class="card-group display-of-cards">
       <div class="card col-md-3 col-xs-12 text-center card-border well">
         <div class="card-header">
@@ -11,13 +12,12 @@
           <h3 class="card-title skill-title card-img-overlay"><br><%= post.skill.title %></h4>
         </div>
         <%= link_to image_tag(post.skill.img_url, :class => "card-img-top img-post", size: "256x205"), post_path(post.id) %>
-        <div class="card-block">
-          <p class="card-text"><%= post.description %></p>
-          <%= link_to "See #{post.creator.username}'s profile", post.creator, :class => "btn btn-primary btn-block"%>
-        </div>
+          <!-- <div class="card-footer"> -->
+            <p class="card-text card-footer"><%= post.description %></p>
+            <%= link_to "See #{post.creator.username}'s profile", post.creator, :class => "btn btn-primary btn-block"%>
+          <!-- </div> -->
       </div>
       <% end %>
-      </div>
     </div>
   <% else %>
     <br><br><br><br><br>
@@ -25,3 +25,8 @@
 No results found! Try again! Click here to see all skills</a></h4>
   <% end %>
 </div>
+
+<!-- <div id="outside-container" class="container well card-group">
+  <div class="one-card card">
+  </div>
+</div> -->
