@@ -137,6 +137,7 @@ th {
 
 .card {
   width: 25rem;
+  flex: 1;
 }
 
 .img-post {
@@ -146,4 +147,8 @@ th {
 
 .display-of-cards {
   justify-content: space-between;
+}
+
+.row {
+  display: flex;
 }
